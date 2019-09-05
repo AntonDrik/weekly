@@ -1,0 +1,40 @@
+.popup__createrow h2{
+    text-align: center;
+    padding: 10px;
+    margin-bottom: 0;
+}
+
+.popup__close{
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    text-align: center;
+    padding: 5px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.article-data{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.article-data > *{
+    margin-bottom: 50px;
+}
+
+.article__controlSection-btns{
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    background-color: green;
+    text-decoration: none;
+    text-transform: none;
+    color: black;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 0 5px;
+}

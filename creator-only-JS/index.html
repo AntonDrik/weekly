@@ -1,0 +1,341 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+    <meta charset="UTF-8">
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600');
+        table td {
+            border: 1px solid black;
+        }
+    </style>
+    <link rel="stylesheet" href="libs/jquery.cleditor.css">
+    <link rel="stylesheet" href="libs/magnific.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<a class="btn__add addArticle" href="#popup-createArticle">добавить статью</a>
+<button id="prod">продакшн</button>
+<center>
+    <table border="0" cellpadding="0" cellspacing="0" style="margin: 0; padding: 0; width: 100%; font-family: 'Open Sans', Arial, Helvetica,
+    sans-serif;" bgcolor="#ffffff">
+        <tr>
+            <td style="height: 100%;">
+                <!--header-->
+                <table border="0" cellpadding="0" cellspacing="0"
+                       style="margin: 0; padding: 0; width: 100%; background-color: #fe770e;">
+                    <tr>
+                        <td>
+                            <center>
+                                <table border="0" cellpadding="0" cellspacing="0" style="margin: 0; padding: 0; width: 600px;
+                                background-color: transparent;">
+                                    <tr>
+                                        <td style="width: 191px;">&nbsp;</td>
+                                        <td style="width: 218px; padding-top: 30px; padding-bottom: 30px; vertical-align: top;">
+                                            <img
+                                                    src="data:image/png;base64,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"
+                                                    alt=""
+                                                    width="218"
+                                                    height="40"
+                                                    style="display: block; margin: 0 auto;">
+                                        </td>
+                                        <td style="padding-top: 30px; padding-left: 5px; width: 186px; vertical-align: top;">
+                                            <p style="margin-top: 0; margin-bottom: 0;">
+                                                <b style="font-weight: 600; font-family: 'Open Sans', Arial, Helvetica, sans-serif; font-size: 12px;
+                                            letter-spacing: 0.12px; line-height: 1; color: #fff;">Weekly</b>
+                                            </p>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </center>
+                        </td>
+                    </tr>
+                </table>
+
+
+                <table border="0" cellpadding="0" cellspacing="0"
+                       style="margin: 0; padding: 0; width: 100%; background-color: #63687a;">
+                    <tr>
+                        <td>
+                            <center>
+                                <table border="0" cellpadding="0" cellspacing="0" style="margin: 0; padding: 0; width: 600px;
+                                background-color: transparent;">
+                                    <tr>
+                                        <td style="width: 191px;">&nbsp;</td>
+                                        <td style="width: 218px; padding-top: 30px; padding-bottom: 20px;">
+                                            <img
+                                                    src="data:image/png;base64,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"
+                                                    alt=""
+                                                    width="218"
+                                                    height="40"
+                                                    border="0"
+                                                    style="display: block; outline: none;">
+                                        </td>
+                                        <td style="width: 191px;">&nbsp;</td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="3" style="padding-bottom: 30px;">
+                                            <p style="text-align: center;">
+                                                <a href="https://www.itsupportme.by/news" target="_blank"
+                                                   style="-webkit-text-size-adjust: none; color: #fff; font-weight: 300;
+                                               font-size: 20px; line-height: 1; letter-spacing: 0.2px; font-family: 'Open Sans', Arial,
+                                               Helvetica, sans-serif;">Читайте наш блог</a>
+                                            </p>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </center>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+</center>
+
+<div id="popup-createArticle" class="popup__wrapper mfp-hide">
+        <h2>Создание статьи</h2>
+        <div class="article-data">
+            <select id="articleTheme">
+                <option value="Let’s Get It Started!">Let’s Get It Started!</option>
+                <option value="What’s Up">What’s Up</option>
+                <option value="Happy B-day!">Happy B-day!</option>
+                <option value="Meet...">Meet...</option>
+                <option value="free">free</option>
+            </select>
+            <button id="createArticleBtn" onclick="$.magnificPopup.close()">Create</button>
+        </div>
+</div>
+
+<div id="popup-createSection" class="popup__wrapper mfp-hide">
+        <h2>Создание секции</h2>
+        <div class="article-data" id="sectionInput">
+            <select id="sectionType">
+                <option value="" selected>Заголовок H3</option>
+                <option value="">Заголовок H4</option>
+                <option value="">обычный текст</option>
+                <option value="">обычный текст без нижнего отступа</option>
+                <option value="">увеличенный простой абзац</option>
+                <option value="">увеличенный простой абзац с акцентом</option>
+                <option value="">Большое фото</option>
+                <option value="">Фото лица</option>
+                <option value="">Линия</option>
+            </select>
+            <button id="createSectionBtn">Create</button>
+        </div>
+</div>
+
+<div id="popup-editSection" class="popup__wrapper mfp-hide">
+    <h2>Редактор</h2>
+    <div class="article-data"  id="sectionEditor">
+        <button id="editSectionBtn">Edit</button>
+    </div>
+</div>
+
+<template id="article__addSection-btn">
+    <tr id="addSectionBtn">
+        <td style="text-align: center; background-color: green; cursor: pointer; border-radius: 3px;">
+            <a class="btn__addSection" href="#popup-createSection" style="width: 100%; text-decoration: none;">ДОБАВИТЬ</a>
+        </td>
+    </tr>
+</template>
+
+<template id="article__controlSection-btns">
+    <td class="controlSection" style="position: absolute; right: -120px; top: 0;">
+        <a class="article__controlSection-btns" id="section__edit" href="#popup-editSection">Edit</a>
+        <a class="article__controlSection-btns" id="section__remove">Remove</a>
+    </td>
+</template>
+
+<template id="article__header-first">
+    <table border="0" cellpadding="0" cellspacing="0" style="margin: 0; padding: 0; width: 100%;" bgcolor="#f7f7f7"
+           background="data:image/jpeg;base64,/9j/4QAYRXhpZgAASUkqAAgAAAAAAAAAAAAAAP/sABFEdWNreQABAAQAAAA8AAD/4QMqaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wLwA8P3hwYWNrZXQgYmVnaW49Iu+7vyIgaWQ9Ilc1TTBNcENlaGlIenJlU3pOVGN6a2M5ZCI/PiA8eDp4bXBtZXRhIHhtbG5zOng9ImFkb2JlOm5zOm1ldGEvIiB4OnhtcHRrPSJBZG9iZSBYTVAgQ29yZSA1LjYtYzE0MiA3OS4xNjA5MjQsIDIwMTcvMDcvMTMtMDE6MDY6MzkgICAgICAgICI+IDxyZGY6UkRGIHhtbG5zOnJkZj0iaHR0cDovL3d3dy53My5vcmcvMTk5OS8wMi8yMi1yZGYtc3ludGF4LW5zIyI+IDxyZGY6RGVzY3JpcHRpb24gcmRmOmFib3V0PSIiIHhtbG5zOnhtcE1NPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvbW0vIiB4bWxuczpzdFJlZj0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL3NUeXBlL1Jlc291cmNlUmVmIyIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOjI4RkUzODMwREEzMjExRThBNUY2ODRDQjBFMjc3M0IxIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOjI4RkUzODJGREEzMjExRThBNUY2ODRDQjBFMjc3M0IxIiB4bXA6Q3JlYXRvclRvb2w9IkFkb2JlIFBob3Rvc2hvcCBDQyAoV2luZG93cykiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDpBRDc3RTNDOERBMDUxMUU4QUQ0MEFBQ0JBOTE1OTEwRSIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDpBRDc3RTNDOURBMDUxMUU4QUQ0MEFBQ0JBOTE1OTEwRSIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/Pv/uAA5BZG9iZQBkwAAAAAH/2wCEAAYEBAQFBAYFBQYJBgUGCQsIBgYICwwKCgsKCgwQDAwMDAwMEAwODxAPDgwTExQUExMcGxsbHB8fHx8fHx8fHx8BBwcHDQwNGBAQGBoVERUaHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fH//AABEIAH4AAQMBEQACEQEDEQH/xABNAAEBAQAAAAAAAAAAAAAAAAAABQgBAQEAAAAAAAAAAAAAAAAAAAAHEAEAAAAAAAAAAAAAAAAAAAAAEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwC0kCrgAAANHq+lAAAAAAAAAAD/2Q==">
+        <tr>
+            <td>
+                <center>
+                    <table border="0" cellpadding="0" cellspacing="0" style="margin: 0; padding: 0; width: 600px;">
+                        <tr>
+                            <td>
+                                <table border="0" cellpadding="0" cellspacing="0" style="width: 100%;"
+                                       background="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAlgAAAB+CAYAAAD4DG/eAAABN2lDQ1BBZG9iZSBSR0IgKDE5OTgpAAAokZWPv0rDUBSHvxtFxaFWCOLgcCdRUGzVwYxJW4ogWKtDkq1JQ5ViEm6uf/oQjm4dXNx9AidHwUHxCXwDxamDQ4QMBYvf9J3fORzOAaNi152GUYbzWKt205Gu58vZF2aYAoBOmKV2q3UAECdxxBjf7wiA10277jTG+38yH6ZKAyNguxtlIYgK0L/SqQYxBMygn2oQD4CpTto1EE9AqZf7G1AKcv8ASsr1fBBfgNlzPR+MOcAMcl8BTB1da4Bakg7UWe9Uy6plWdLuJkEkjweZjs4zuR+HiUoT1dFRF8jvA2AxH2w3HblWtay99X/+PRHX82Vun0cIQCw9F1lBeKEuf1UYO5PrYsdwGQ7vYXpUZLs3cLcBC7dFtlqF8hY8Dn8AwMZP/fNTP8gAAAAJcEhZcwAACxMAAAsTAQCanBgAAAXCaVRYdFhNTDpjb20uYWRvYmUueG1wAAAAAAA8P3hwYWNrZXQgYmVnaW49Iu+7vyIgaWQ9Ilc1TTBNcENlaGlIenJlU3pOVGN6a2M5ZCI/PiA8eDp4bXBtZXRhIHhtbG5zOng9ImFkb2JlOm5zOm1ldGEvIiB4OnhtcHRrPSJBZG9iZSBYTVAgQ29yZSA1LjYtYzE0MiA3OS4xNjA5MjQsIDIwMTcvMDcvMTMtMDE6MDY6MzkgICAgICAgICI+IDxyZGY6UkRGIHhtbG5zOnJkZj0iaHR0cDovL3d3dy53My5vcmcvMTk5OS8wMi8yMi1yZGYtc3ludGF4LW5zIyI+IDxyZGY6RGVzY3JpcHRpb24gcmRmOmFib3V0PSIiIHhtbG5zOnhtcD0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wLyIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczpzdEV2dD0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL3NUeXBlL1Jlc291cmNlRXZlbnQjIiB4bWxuczpkYz0iaHR0cDovL3B1cmwub3JnL2RjL2VsZW1lbnRzLzEuMS8iIHhtbG5zOnBob3Rvc2hvcD0iaHR0cDovL25zLmFkb2JlLmNvbS9waG90b3Nob3AvMS4wLyIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ0MgMjAxOSAoTWFjaW50b3NoKSIgeG1wOkNyZWF0ZURhdGU9IjIwMTgtMTAtMjdUMTg6MjU6MzArMDM6MDAiIHhtcDpNb2RpZnlEYXRlPSIyMDE4LTEwLTI3VDIyOjUwOjQ3KzAzOjAwIiB4bXA6TWV0YWRhdGFEYXRlPSIyMDE4LTEwLTI3VDIyOjUwOjQ3KzAzOjAwIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOjJiOGJjMjZmLTQwZDgtYmE0Ny1hOGI1LTI5NjZiMjJjYmZhYyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozQUVDNUVCRkQxMjYxMUU4QUVCNkI0QTQ1NzIxQzU5NCIgeG1wTU06T3JpZ2luYWxEb2N1bWVudElEPSJ4bXAuZGlkOjNBRUM1RUJGRDEyNjExRThBRUI2QjRBNDU3MjFDNTk0IiBkYzpmb3JtYXQ9ImltYWdlL3BuZyIgcGhvdG9zaG9wOkNvbG9yTW9kZT0iMyI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjNBRUM1RUJDRDEyNjExRThBRUI2QjRBNDU3MjFDNTk0IiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjNBRUM1RUJERDEyNjExRThBRUI2QjRBNDU3MjFDNTk0Ii8+IDx4bXBNTTpIaXN0b3J5PiA8cmRmOlNlcT4gPHJkZjpsaSBzdEV2dDphY3Rpb249InNhdmVkIiBzdEV2dDppbnN0YW5jZUlEPSJ4bXAuaWlkOjJiOGJjMjZmLTQwZDgtYmE0Ny1hOGI1LTI5NjZiMjJjYmZhYyIgc3RFdnQ6d2hlbj0iMjAxOC0xMC0yN1QyMjo1MDo0NyswMzowMCIgc3RFdnQ6c29mdHdhcmVBZ2VudD0iQWRvYmUgUGhvdG9zaG9wIENDIChXaW5kb3dzKSIgc3RFdnQ6Y2hhbmdlZD0iLyIvPiA8L3JkZjpTZXE+IDwveG1wTU06SGlzdG9yeT4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz5Hn9NmAAAE7ElEQVR4nO3cP2tbVxjA4ffcK1kyNCWF4iVdUshQyKIh3yJkLKSQpWkG0yFTP0WnLF2STmkxdEyy5wPkA3RI2yz2EgQNxaW2bN3TQZYsK/8gvDgxeR4w5yKdK874470Xl9FoFMsmk0lcvHgx7t692167dm04GAzaiCgBAEBERN3f358+ePBg79atW9Nnz57F2traiQ29E7trjYiI4XD46cbGxtePHz/+rpTyVUQMI6Ke1qkBAD5QJSL2aq2/r6+v3xsOh79FxD+11ijleB5VlidY0+k0Ll269NnW1taPpZSbyxsBADhWa41a68/Xr1//4enTp3+3bbv4bhFYh4eHsbGxsfbo0aOb/X7/p/k0CwCAVyulxMHBwfdXr1699/z580mvN3s42My/P1rP9fv9m+IKAODtaq3R7/e/jYhzRx+ViOPAmhtGxOXTPBgAwBl3OWYNtbA6wWoiYnCaJwIAOOMGsdJUTZz8FwyrEy0AAN5uuaHK6gQLAIB399I7WCWEFgDAuzjRUR4JAgAkE1gAAMkEFgBAMoEFAJBMYAEAJBNYAADJBBYAQDKBBQCQTGABACQTWAAAyQQWAEAygQUAkExgAQAkE1gAAMkEFgBAMoEFAJBMYAEAJBNYAADJBBYAQDKBBQCQTGABACQTWAAAyQQWAEAygQUAkExgAQAkE1gAAMkEFgBAMoEFAJBMYAEAJBNYAADJBBYAQDKBBQCQTGABACQTWAAAyQQWAEAygQUAkExgAQAkE1gAAMkEFgBAMoEFAJBMYAEAJBNYAADJBBYAQDKBBQCQTGABACQTWAAAyQQWAEAygQUAkExgAQAkE1gAAMkEFgBAMoEFAJBMYAEAJBNYAADJBBYAQDKBBQCQTGABACQTWAAAyQQWAEAygQUAkExgAQAkE1gAAMkEFgBAMoEFAJBMYAEAJBNYAADJBBYAQDKBBQCQTGABACQTWAAAyQQWAEAygQUAkExgAQAkE1gAAMkEFgBAMoEFAJBMYAEAJBNYAADJBBYAQDKBBQCQTGABACQTWAAAyQQWAEAygQUAkExgAQAkE1gAAMkEFgBAMoEFAJBMYAEAJBNYAADJBBYAQDKBBQCQTGABACQTWAAAyQQWAEAygQUAkExgAQAkE1gAAMkEFgBAMoEFAJBMYAEAJBNYAADJBBYAQDKBBQCQbDmwSkRErfXwPZ0FAODMqbVOjy7L/LPVCdZBRPx5aicCADj7/ohZQy00K9e7k8nkfiklAAB4s1JKTCaT+xGxG0tdtbho27aMx+O9zc3NrbZtHzaN17MAAF6naZpo2/bh5ubm1ng83mvbdjGhKqPRqMTsmWFTa+3t7+83V65c+eLOnTs3zp8//01EfPneTg4A8GH668WLF7/evn37lydPnmwPBoOulHIYEV1E1DIajSJmk6wmIpqu63pd15ULFy580jTN56WU9aMf8twQAPjY1YiIWut/XdeNd3Z2dpumqU3TzOOqi4iut7S5RkRtmqYrpbTb29v/1lp34zisBBYA8LGr87WUUnq9XpRSulhqqYiI3soNXcTsha1+v7+YasXJuBJaAMDHpq5cd0t/06N1saf3ipu6pXUeV6IKAGBmPqnqVtbXTrDmuphF1XwVWAAAM4uQipNh9dIEa/mG+erdKwCAV6uvWSPi5cBa3VhWbwAAICLe0Ej/A3VS3VGqfmnQAAAAAElFTkSuQmCC">
+                                    <tr>
+                                        <td style="padding: 27px 0 30px;">
+                                            <h2 style="margin-bottom: 15px; margin-top: 0; text-align: center; color: #4f5362;
+                                            line-height: 1; letter-spacing: 0.36px; font-size: 36px; font-family: 'Open Sans', Arial,
+                                            Helvetica, sans-serif;">
+                                                <b style="font-weight: 600;">Let’s Get It Started!</b>
+                                            </h2>
+                                            <p style="margin-bottom: 0; margin-top: 0; text-align: center; color: #a8acb9;
+                                            line-height: 1; letter-spacing: 0.18px; font-size: 18px; font-family: 'Open Sans', Arial,
+                                            Helvetica, sans-serif;">О новых проектах в компании</p>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                </center>
+            </td>
+        </tr>
+    </table>
+</template>
+
+<template id="article__body-first">
+    <table border="0" cellpadding="0" cellspacing="0"
+           style="margin: 0; padding: 0; width: 100%; background-color: #fff">
+        <tr>
+            <td>
+                <center>
+                    <table border="0" cellpadding="0" cellspacing="0" style="position: relative; margin: 0; padding: 0; width: 600px;">
+                        <tbody></tbody>
+                    </table>
+                </center>
+            </td>
+        </tr>
+    </table>
+</template>
+
+<template id="article__header">
+    <table border="0" cellpadding="0" cellspacing="0" style="margin: 0; padding: 0; width: 100%;" bgcolor="#f7f7f7"
+           background="data:image/jpeg;base64,/9j/4AAQSkZJRgABAgAAZABkAAD/7AARRHVja3kAAQAEAAAAPAAA/+EDcmh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8APD94cGFja2V0IGJlZ2luPSLvu78iIGlkPSJXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQiPz4gPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iQWRvYmUgWE1QIENvcmUgNS42LWMxNDIgNzkuMTYwOTI0LCAyMDE3LzA3LzEzLTAxOjA2OjM5ICAgICAgICAiPiA8cmRmOlJERiB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiPiA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtbG5zOnhtcD0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wLyIgeG1wTU06T3JpZ2luYWxEb2N1bWVudElEPSJ4bXAuZGlkOkI4Q0FBNTI0REEyMjExRTg5RTBEQkMzRERCRkU2RkEzIiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOjNGRTI1RDA2REEzMjExRTg5NkQ5RkMyRkIwRjQwMERBIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOjNGRTI1RDA1REEzMjExRTg5NkQ5RkMyRkIwRjQwMERBIiB4bXA6Q3JlYXRvclRvb2w9IkFkb2JlIFBob3Rvc2hvcCBDQyAoV2luZG93cykiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo4NjVjZTJhMi1kYjBmLWUzNDgtYjU3OS1jZWIxZjczODNmMjAiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6QjhDQUE1MjREQTIyMTFFODlFMERCQzNEREJGRTZGQTMiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz7/7gAOQWRvYmUAZMAAAAAB/9sAhAAGBAQEBQQGBQUGCQYFBgkLCAYGCAsMCgoLCgoMEAwMDAwMDBAMDg8QDw4MExMUFBMTHBsbGxwfHx8fHx8fHx8fAQcHBw0MDRgQEBgaFREVGh8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx//wAARCACcAAEDAREAAhEBAxEB/8QAXAABAAMAAAAAAAAAAAAAAAAAAAUGBwEBAQEAAAAAAAAAAAAAAAAAAAcFEAEAAQUAAAAAAAAAAAAAAAAA0gOjVQYXEQEAAQUBAAAAAAAAAAAAAAAA0aECUgQVov/aAAwDAQACEQMRAD8AmkgVgAAAAAAAAABtfOtNx96vNR+Dp4erpT3ubedLYWRsMkAAAAAAB//Z">
+        <tr>
+            <td>
+                <center>
+                    <table border="0" cellpadding="0" cellspacing="0" style="margin: 0; padding: 0; width: 600px;">
+                        <tr>
+                            <td style="height: 30px;">&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <table border="0" cellpadding="0" cellspacing="0" style="width: 100%;"
+                                       background="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAlgAAAB+CAYAAAD4DG/eAAABN2lDQ1BBZG9iZSBSR0IgKDE5OTgpAAAokZWPv0rDUBSHvxtFxaFWCOLgcCdRUGzVwYxJW4ogWKtDkq1JQ5ViEm6uf/oQjm4dXNx9AidHwUHxCXwDxamDQ4QMBYvf9J3fORzOAaNi152GUYbzWKt205Gu58vZF2aYAoBOmKV2q3UAECdxxBjf7wiA10277jTG+38yH6ZKAyNguxtlIYgK0L/SqQYxBMygn2oQD4CpTto1EE9AqZf7G1AKcv8ASsr1fBBfgNlzPR+MOcAMcl8BTB1da4Bakg7UWe9Uy6plWdLuJkEkjweZjs4zuR+HiUoT1dFRF8jvA2AxH2w3HblWtay99X/+PRHX82Vun0cIQCw9F1lBeKEuf1UYO5PrYsdwGQ7vYXpUZLs3cLcBC7dFtlqF8hY8Dn8AwMZP/fNTP8gAAAAJcEhZcwAACxMAAAsTAQCanBgAAAXCaVRYdFhNTDpjb20uYWRvYmUueG1wAAAAAAA8P3hwYWNrZXQgYmVnaW49Iu+7vyIgaWQ9Ilc1TTBNcENlaGlIenJlU3pOVGN6a2M5ZCI/PiA8eDp4bXBtZXRhIHhtbG5zOng9ImFkb2JlOm5zOm1ldGEvIiB4OnhtcHRrPSJBZG9iZSBYTVAgQ29yZSA1LjYtYzE0MiA3OS4xNjA5MjQsIDIwMTcvMDcvMTMtMDE6MDY6MzkgICAgICAgICI+IDxyZGY6UkRGIHhtbG5zOnJkZj0iaHR0cDovL3d3dy53My5vcmcvMTk5OS8wMi8yMi1yZGYtc3ludGF4LW5zIyI+IDxyZGY6RGVzY3JpcHRpb24gcmRmOmFib3V0PSIiIHhtbG5zOnhtcD0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wLyIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczpzdEV2dD0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL3NUeXBlL1Jlc291cmNlRXZlbnQjIiB4bWxuczpkYz0iaHR0cDovL3B1cmwub3JnL2RjL2VsZW1lbnRzLzEuMS8iIHhtbG5zOnBob3Rvc2hvcD0iaHR0cDovL25zLmFkb2JlLmNvbS9waG90b3Nob3AvMS4wLyIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ0MgMjAxOSAoTWFjaW50b3NoKSIgeG1wOkNyZWF0ZURhdGU9IjIwMTgtMTAtMjdUMTg6MjU6MzArMDM6MDAiIHhtcDpNb2RpZnlEYXRlPSIyMDE4LTEwLTI3VDIyOjUwOjQ3KzAzOjAwIiB4bXA6TWV0YWRhdGFEYXRlPSIyMDE4LTEwLTI3VDIyOjUwOjQ3KzAzOjAwIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOjJiOGJjMjZmLTQwZDgtYmE0Ny1hOGI1LTI5NjZiMjJjYmZhYyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozQUVDNUVCRkQxMjYxMUU4QUVCNkI0QTQ1NzIxQzU5NCIgeG1wTU06T3JpZ2luYWxEb2N1bWVudElEPSJ4bXAuZGlkOjNBRUM1RUJGRDEyNjExRThBRUI2QjRBNDU3MjFDNTk0IiBkYzpmb3JtYXQ9ImltYWdlL3BuZyIgcGhvdG9zaG9wOkNvbG9yTW9kZT0iMyI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjNBRUM1RUJDRDEyNjExRThBRUI2QjRBNDU3MjFDNTk0IiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjNBRUM1RUJERDEyNjExRThBRUI2QjRBNDU3MjFDNTk0Ii8+IDx4bXBNTTpIaXN0b3J5PiA8cmRmOlNlcT4gPHJkZjpsaSBzdEV2dDphY3Rpb249InNhdmVkIiBzdEV2dDppbnN0YW5jZUlEPSJ4bXAuaWlkOjJiOGJjMjZmLTQwZDgtYmE0Ny1hOGI1LTI5NjZiMjJjYmZhYyIgc3RFdnQ6d2hlbj0iMjAxOC0xMC0yN1QyMjo1MDo0NyswMzowMCIgc3RFdnQ6c29mdHdhcmVBZ2VudD0iQWRvYmUgUGhvdG9zaG9wIENDIChXaW5kb3dzKSIgc3RFdnQ6Y2hhbmdlZD0iLyIvPiA8L3JkZjpTZXE+IDwveG1wTU06SGlzdG9yeT4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz5Hn9NmAAAE7ElEQVR4nO3cP2tbVxjA4ffcK1kyNCWF4iVdUshQyKIh3yJkLKSQpWkG0yFTP0WnLF2STmkxdEyy5wPkA3RI2yz2EgQNxaW2bN3TQZYsK/8gvDgxeR4w5yKdK874470Xl9FoFMsmk0lcvHgx7t692167dm04GAzaiCgBAEBERN3f358+ePBg79atW9Nnz57F2traiQ29E7trjYiI4XD46cbGxtePHz/+rpTyVUQMI6Ke1qkBAD5QJSL2aq2/r6+v3xsOh79FxD+11ijleB5VlidY0+k0Ll269NnW1taPpZSbyxsBADhWa41a68/Xr1//4enTp3+3bbv4bhFYh4eHsbGxsfbo0aOb/X7/p/k0CwCAVyulxMHBwfdXr1699/z580mvN3s42My/P1rP9fv9m+IKAODtaq3R7/e/jYhzRx+ViOPAmhtGxOXTPBgAwBl3OWYNtbA6wWoiYnCaJwIAOOMGsdJUTZz8FwyrEy0AAN5uuaHK6gQLAIB399I7WCWEFgDAuzjRUR4JAgAkE1gAAMkEFgBAMoEFAJBMYAEAJBNYAADJBBYAQDKBBQCQTGABACQTWAAAyQQWAEAygQUAkExgAQAkE1gAAMkEFgBAMoEFAJBMYAEAJBNYAADJBBYAQDKBBQCQTGABACQTWAAAyQQWAEAygQUAkExgAQAkE1gAAMkEFgBAMoEFAJBMYAEAJBNYAADJBBYAQDKBBQCQTGABACQTWAAAyQQWAEAygQUAkExgAQAkE1gAAMkEFgBAMoEFAJBMYAEAJBNYAADJBBYAQDKBBQCQTGABACQTWAAAyQQWAEAygQUAkExgAQAkE1gAAMkEFgBAMoEFAJBMYAEAJBNYAADJBBYAQDKBBQCQTGABACQTWAAAyQQWAEAygQUAkExgAQAkE1gAAMkEFgBAMoEFAJBMYAEAJBNYAADJBBYAQDKBBQCQTGABACQTWAAAyQQWAEAygQUAkExgAQAkE1gAAMkEFgBAMoEFAJBMYAEAJBNYAADJBBYAQDKBBQCQTGABACQTWAAAyQQWAEAygQUAkExgAQAkE1gAAMkEFgBAMoEFAJBMYAEAJBNYAADJBBYAQDKBBQCQTGABACQTWAAAyQQWAEAygQUAkExgAQAkE1gAAMkEFgBAMoEFAJBMYAEAJBNYAADJBBYAQDKBBQCQbDmwSkRErfXwPZ0FAODMqbVOjy7L/LPVCdZBRPx5aicCADj7/ohZQy00K9e7k8nkfiklAAB4s1JKTCaT+xGxG0tdtbho27aMx+O9zc3NrbZtHzaN17MAAF6naZpo2/bh5ubm1ng83mvbdjGhKqPRqMTsmWFTa+3t7+83V65c+eLOnTs3zp8//01EfPneTg4A8GH668WLF7/evn37lydPnmwPBoOulHIYEV1E1DIajSJmk6wmIpqu63pd15ULFy580jTN56WU9aMf8twQAPjY1YiIWut/XdeNd3Z2dpumqU3TzOOqi4iut7S5RkRtmqYrpbTb29v/1lp34zisBBYA8LGr87WUUnq9XpRSulhqqYiI3soNXcTsha1+v7+YasXJuBJaAMDHpq5cd0t/06N1saf3ipu6pXUeV6IKAGBmPqnqVtbXTrDmuphF1XwVWAAAM4uQipNh9dIEa/mG+erdKwCAV6uvWSPi5cBa3VhWbwAAICLe0Ej/A3VS3VGqfmnQAAAAAElFTkSuQmCC">
+                                    <tr>
+                                        <td style="padding: 27px 0 30px;">
+                                            <h2 style="margin-bottom: 15px; margin-top: 0; text-align: center; color: #4f5362;
+                                            line-height: 1; letter-spacing: 0.36px; font-size: 36px; font-family: 'Open Sans', Arial,
+                                            Helvetica, sans-serif;">
+                                                <b style="font-weight: 600;">What’s Up</b>
+                                            </h2>
+                                            <p style="margin-bottom: 0; margin-top: 0; text-align: center; color: #a8acb9;
+                                            line-height: 1; letter-spacing: 0.18px; font-size: 18px; font-family: 'Open Sans', Arial,
+                                            Helvetica, sans-serif;">Наши события</p>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                </center>
+            </td>
+        </tr>
+    </table>
+</template>
+
+<template id="article__body">
+    <table border="0" cellpadding="0" cellspacing="0"
+           style="margin: 0; padding: 0; width: 100%; background-color: #fff">
+        <tr>
+            <td>
+                <center>
+                    <table border="0" cellpadding="0" cellspacing="0" style="margin: 0; padding: 0; width: 600px;">
+                        <tbody></tbody>
+                    </table>
+                </center>
+            </td>
+        </tr>
+    </table>
+</template>
+
+<template id="article__end">
+    <tr>
+        <td style="height: 120px;">&nbsp;</td>
+    </tr>
+</template>
+
+<template id="title__h3">
+    <tr>
+        <td style="padding-left: 40px; padding-right: 40px; padding-bottom: 30px;">
+            <h3 style="margin-bottom: 0; margin-top: 0; text-align: center; color: #4f5362; line-height: 1.25; letter-spacing: 0.24px; font-size: 24px; font-family: 'Open Sans', Arial, Helvetica, sans-serif;">
+                <b style="font-weight: 600;"></b>
+            </h3>
+        </td>
+    </tr>
+</template>
+
+<template id="title__h4">
+    <tr>
+        <td style="padding-bottom: 30px; padding-left: 40px; padding-right: 40px;">
+            <h4 style="margin-bottom: 0; margin-top: 0; text-align: left; color: #4f5362; line-height: 1; letter-spacing: 0.18px; font-size: 18px; font-family: 'Open Sans', Arial, Helvetica, sans-serif;">
+                <b style="font-weight: 600;"></b>
+            </h4>
+        </td>
+    </tr>
+</template>
+
+<template id="text__standart">
+    <tr>
+        <td style="padding-left: 40px; padding-right: 40px; padding-bottom: 30px;">
+            <p style="margin-bottom: 0; margin-top: 0; text-align: left; color: #63687a; line-height: 28px;
+                            letter-spacing: 0.16px; font-size: 16px; font-family: 'Open Sans', Arial, Helvetica, sans-serif;">
+            </p>
+        </td>
+    </tr>
+</template>
+
+<template id="text__standart-modify">
+    <tr>
+        <td style="padding-left: 40px; padding-right: 40px; padding-bottom: 30px;">
+            <p style="margin-bottom: 0; margin-top: 0; text-align: center; color: #63687a; line-height: 28px; letter-spacing: 0.18px; font-size: 18px; font-family: 'Open Sans', Arial, Helvetica, sans-serif;"></p>
+        </td>
+    </tr>
+</template>
+
+<template id="text__standart-modify-accent">
+    <tr>
+        <td style="padding-left: 40px; padding-right: 40px; padding-bottom: 30px;">
+            <p style="margin-bottom: 0; margin-top: 0; text-align: center; color: #4f5362; line-height: 28px; letter-spacing: 0.18px; font-size: 18px; font-family: 'Open Sans', Arial, Helvetica, sans-serif;">
+                <b style="font-weight: 600;"></b>
+            </p>
+        </td>
+    </tr>
+</template>
+
+<template id="image__big">
+    <tr>
+        <td style="padding-top: 60px; padding-bottom: 30px;">
+            <center>
+                <img src="" alt="" width="600" height="400" border="0" style="display: block; outline: none;">
+            </center>
+        </td>
+    </tr>
+</template>
+
+<template id="image__face">
+    <tr>
+        <td>
+            <img src="" alt="" width="600" height="302" border="0" style="display: block; outline: none;">
+        </td>
+    </tr>
+</template>
+
+<template id="line">
+    <tr>
+        <td style="padding-top: 70px; padding-bottom: 70px">
+            <center>
+                <table border="0" cellpadding="0" cellspacing="0" style="margin: 0; padding: 0; width: 184px; background-color: #e5e6ea;">
+                    <tbody><tr>
+                        <td style="height: 1px; font-size: 0; line-height: 0;"></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </center>
+        </td>
+    </tr>
+</template>
+
+<script src="libs/jquery.js"></script>
+<script src="libs/jquery.cleditor.js"></script>
+<script src="libs/magnific.js"></script>
+<script src="script.js" type="module"></script>
+<script src="../parser/main.js" type="module"></script>
+</body>
+</html>
